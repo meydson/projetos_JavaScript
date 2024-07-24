@@ -48,74 +48,71 @@ window.onload = function() {
         `);
     }
     
-    function previous() {
-        function replace() {
-            let element = ["foto", "nome", "cargo", "descricao", "botao1", "botao2"];
-            let child = "";
-            counter--;
-            for (i = 0; i <= 5; i++) {
-                child = document.getElementById(element[i]);
-                child.remove()
-                //child.parentNode.removeChild(child);
-                //replacedNode = parentNode.replaceChild(`<img id="foto" src=${images[counter]} alt="imagem"/>`, child)
-            }
-            //let foto = document.getElementById("foto");
-            //foto.parentNode.removeChild(foto);
-            document.write(`<img id="foto" src=${images[counter]} alt="imagem"/>`);
-            document.write(`<h3 id="nome">${names[counter]}</h3>`);
-            document.write(`<h4 id="cargo">${cargo[counter]}</h4>`);
-            document.write(`<span id="descricao">${review[counter]}</span>`);
-            document.write(`
+function previous() {
+    function replace() {
+        let element = ["foto", "nome", "cargo", "descricao", "botao1", "botao2"];
+        let child = "";
+        counter--;
+        for (i = 0; i <= 5; i++) {
+            child = document.getElementById(element[i]);
+            child.remove()
+            //child.parentNode.removeChild(child);
+            //replacedNode = parentNode.replaceChild(`<img id="foto" src=${images[counter]} alt="imagem"/>`, child)
+        }
+        //let foto = document.getElementById("foto");
+        //foto.parentNode.removeChild(foto);
+        document.write(`<img id="foto" src=${images[counter]} alt="imagem"/>`);
+        document.write(`<h3 id="nome">${names[counter]}</h3>`);
+        document.write(`<h4 id="cargo">${cargo[counter]}</h4>`);
+        document.write(`<span id="descricao">${review[counter]}</span>`);
+        document.write(`
+        <div>
+            <input id="botao1" type="button" onclick="previous()" value="Previous">
+        </div>    
+        `);
+        document.write(`
+        <div>
+            <input id="botao2" type="button" onclick="next()" value="next">
+        </div>    
+        `);
+    }
+    
+    if (counter > 0) {
+        replace();
+    } else {
+        counter = 5;
+        replace();
+    }
+}
+
+function next() {
+    function replace() {
+        let element = ["foto", "nome", "cargo", "descricao", "botao1", "botao2"];
+        let child = "";
+        counter++;
+        for (i = 0; i <= 5; i++) {
+            child = document.getElementById(element[i]);
+            child.remove()
+            //child.parentNode.removeChild(child);
+            //replacedNode = parentNode.replaceChild(`<img id="foto" src=${images[counter]} alt="imagem"/>`, child)
+        }
+        //let foto = document.getElementById("foto");
+        //foto.parentNode.removeChild(foto);
+        document.write(`<img id="foto" src=${images[counter]} alt="imagem"/>`);
+        document.write(`<h3 id="nome">${names[counter]}</h3>`);
+        document.write(`<h4 id="cargo">${cargo[counter]}</h4>`);
+        document.write(`<span id="descricao">${review[counter]}</span>`);
+        document.write(`
             <div>
                 <input id="botao1" type="button" onclick="previous()" value="Previous">
             </div>    
             `);
-            document.write(`
-            <div>
-                <input id="botao2" type="button" onclick="next()" value="next">
-            </div>    
-            `);
-        }
-        
-        if (counter > 0) {
-            replace();
-            console.log("Entrou no if "+counter)
-        } else {
-            counter = 5;
-            replace();
-            console.log("entrou no else")
-        }
-    }
-    
-    function next() {
-        function replace() {
-            let element = ["foto", "nome", "cargo", "descricao", "botao1", "botao2"];
-            let child = "";
-            counter++;
-            for (i = 0; i <= 5; i++) {
-                child = document.getElementById(element[i]);
-                child.remove()
-                //child.parentNode.removeChild(child);
-                //replacedNode = parentNode.replaceChild(`<img id="foto" src=${images[counter]} alt="imagem"/>`, child)
-            }
-            //let foto = document.getElementById("foto");
-            //foto.parentNode.removeChild(foto);
-            document.write(`<img id="foto" src=${images[counter]} alt="imagem"/>`);
-            document.write(`<h3 id="nome">${names[counter]}</h3>`);
-            document.write(`<h4 id="cargo">${cargo[counter]}</h4>`);
-            document.write(`<span id="descricao">${review[counter]}</span>`);
-            document.write(`
-                <div>
-                    <input id="botao1" type="button" onclick="previous()" value="Previous">
-                </div>    
-                `);
-            document.write(`
-            <div>
-                <input id="botao2" type="button" onclick="next()" value="next">
-            </div>    
-            `);
-    }
-
+        document.write(`
+        <div>
+            <input id="botao2" type="button" onclick="next()" value="next">
+        </div>    
+        `);
+}
     if (counter < 4) {
         replace();
     } else {

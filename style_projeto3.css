@@ -1,0 +1,9 @@
+img#content{
+    background-color: black;
+}
+
+img#foto{
+    background-color: black;
+    width: 25%;
+    /*height: 25%;*/
+}
